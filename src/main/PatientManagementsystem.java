@@ -41,6 +41,9 @@ public class PatientManagementsystem {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        
+          
             // TODO code application logic here
             PatientModel patient1 = new PatientModel(32,"female","Evan", "password", "Josh", "Evan","pl4 8ba");
             PatientModel patient2 = new PatientModel(25,"male","Emily", "password", "Emily", "Walker","pl4 8bx");
@@ -134,16 +137,31 @@ public class PatientManagementsystem {
             PatientAccountTerminationRequest pendingTerminateAccountsStore = new PatientAccountTerminationRequest();
             pendingTerminateAccountsStore.addUser(patient1);
 
-           ModelsStore temp = null;         
+                    
+          
+            
+             ModelsStore modelStore = new ModelsStore(patientStore, doctorStore , adminStore
+                    ,secretaryStore,medicineStore ,prescriptionStore, doctorFeedbackStore,appointmentStore
+                    ,pendingAppointmentsStore, pendingAccountsStore,pendingTerminateAccountsStore);
+             
+             
+             
+            WriteFile files = new WriteFile();
+            files.executeAction(modelStore);
+
+
+           ModelsStore temp = null;
            ReadFile file = new ReadFile();
            ModelsStore store = file.executeAction(temp);
+           
             
             
         
             
         LoginRoleController Controller = new LoginRoleController(store);
     }
+}
     
-    }
+    
     
 

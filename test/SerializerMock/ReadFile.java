@@ -27,7 +27,7 @@ public class ReadFile extends FileManagementTemplate{
     protected void modifyFile() {
         ModelsStore store = null;
         Gson gson = new Gson();
-        try (Reader r = new FileReader("Data.json")) {
+        try (Reader r = new FileReader("testData.json")) {
             // Convert JSON File to Java Object
             store = gson.fromJson(r, ModelsStore.class);	
             // print staff 

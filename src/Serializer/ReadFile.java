@@ -25,7 +25,7 @@ public class ReadFile extends FileManagementTemplate{
      */
     @Override
     protected void modifyFile() {
-        ModelsStore store = null;
+        ModelsStore store;
         Gson gson = new Gson();
         try (Reader r = new FileReader("Data.json")) {
             // Convert JSON File to Java Object
@@ -34,7 +34,6 @@ public class ReadFile extends FileManagementTemplate{
             this.modelsStore = store;
 
         } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
