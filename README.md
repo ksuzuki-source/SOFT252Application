@@ -9,7 +9,7 @@ Using Gson to serializing files.
 
 ・User info
 
-Admin(Username, Password): Kohei, Password
+Admin(Username, Password): kouss, Password
 
 Patient(Username, password): Evan, Password
 
