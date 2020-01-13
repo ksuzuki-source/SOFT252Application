@@ -14,6 +14,7 @@ import Models.ModelsStore;
 import UserModel.UserModel;
 import Controllers.AdminUIController;
 import Account.CreateAccount;
+import java.util.ArrayList;
 
 /**
  *
@@ -64,7 +65,7 @@ public class AdminLoginController extends LoginHandler {
         }
         public String checkLogin(String Username,String Password){
 
-            for (UserModel p : modelStore.AdminStore.getUsers()){
+            for (UserModel p :(ArrayList<UserModel>) modelStore.AdminStore.getUsers()){
                 if(p.getUsername().equals(Username) && p.getPassword().equals(Password)){
                     return p.getUsername();
                 }

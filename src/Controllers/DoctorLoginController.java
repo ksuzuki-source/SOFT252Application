@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import Models.ModelsStore;
 import UserModel.UserModel;
 import Controllers.DoctorUIController;
+import java.util.ArrayList;
 
 
 /**
@@ -58,7 +59,7 @@ public class DoctorLoginController {
         }
         public String checkLogin(String Username,String Password){
 
-            for (UserModel p : modelStore.DoctorStore.getUsers()){
+            for (UserModel p :(ArrayList<UserModel>) modelStore.DoctorStore.getUsers()){
                 if(p.getUsername().equals(Username) && p.getPassword().equals(Password)){
                     return p.getUsername();
                 }

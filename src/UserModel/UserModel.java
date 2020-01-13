@@ -16,7 +16,7 @@ public class UserModel implements Serializable{
     /**
      *Store the id for the user
      */
-    protected String ID;
+    protected String username;
 
     /**
      * the password for each user
@@ -54,7 +54,7 @@ public class UserModel implements Serializable{
      * @param address
      */
     public UserModel(String username, String password, String firstName, String surname, String address) {
-        this.ID = username;
+        this.username = username;
         this.password = password;
         this.firstName = firstName;
         this.surname = surname;
@@ -66,7 +66,7 @@ public class UserModel implements Serializable{
      * @return the username 
      */
     public String getUsername() {
-        return ID;
+        return username;
     }
 
     /**
@@ -74,7 +74,7 @@ public class UserModel implements Serializable{
      * @param username
      */
     public void setUsername(String username) {
-        this.ID = username;
+        this.username = username;
     }
 
     /**

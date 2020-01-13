@@ -13,6 +13,7 @@ import java.io.Reader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import Models.ModelsStore;
+import java.util.ArrayList;
 
 /**
  *
@@ -55,10 +56,12 @@ public class ReadFile extends FileManagementTemplate{
      */
     @Override
     protected void openFile() {
+
         try {
             this.file = new FileReader("Data.json");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ReadFile.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
 }

@@ -12,8 +12,8 @@ import java.awt.event.ActionListener;
 import Models.ModelsStore;
 import Patient.PatientModel;
 import UserModel.UserModel;
-import Controllers.PatientUIController;
 import Account.RequestAccount;
+import java.util.ArrayList;
 /**
  *
  * @author kouss
@@ -66,7 +66,7 @@ public class PatientLoginCointroller extends LoginHandler {
             }
         }
         public String checkLogin(String Username,String Password){
-            for (UserModel p : modelStore.PatientStore.getUsers()){
+            for (UserModel p :(ArrayList<UserModel>) modelStore.PatientStore.getUsers()){
                 if(p.getUsername().equals(Username) && p.getPassword().equals(Password)){
                     return p.getUsername();
                 }

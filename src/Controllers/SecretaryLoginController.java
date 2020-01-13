@@ -5,13 +5,14 @@
  */
 package Controllers;
 
-import Serializer.WriteFile;
+import Serializer.ReadFile;
 import Views.SecretaryLoginUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Models.ModelsStore;
 import UserModel.UserModel;
-import Controllers.SecretaryUIController;
+import Secretary.SecretaryStore;
+import java.util.ArrayList;
 /**
  *
  * @author kouss
@@ -55,11 +56,12 @@ public class SecretaryLoginController {
         }
         public String checkLogin(String Username,String Password){
 
-            for (UserModel p : modelStore.SecretaryStore.getUsers()){
+            for (UserModel p :(ArrayList<UserModel>) modelStore.SecretaryStore.getUsers()){
                 if(p.getUsername().equals(Username) && p.getPassword().equals(Password)){
                     return p.getUsername();
                 }
             }
+
             return null;
         }
         

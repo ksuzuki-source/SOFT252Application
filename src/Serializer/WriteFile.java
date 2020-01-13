@@ -39,11 +39,13 @@ public class WriteFile extends FileManagementTemplate{
      */
     @Override
     protected void openFile() {
+        
         try {
             this.file = new FileWriter("Data.json");
         } catch (IOException ex) {
             Logger.getLogger(WriteFile.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
 
     /**

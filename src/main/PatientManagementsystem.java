@@ -56,12 +56,12 @@ public class PatientManagementsystem {
             patientStore.addUser(patient3);
             
             DoctorStore doctorStore = new DoctorStore();
-            DoctorModel james = new DoctorModel("Aran", "password", "Aran","Tall","pl4 8ba ");
-            DoctorModel sam = new DoctorModel("John", "password", "Jhon","Likker","pl2 8bx");
-            DoctorModel jill = new DoctorModel("Jony", "password", "Jonny","Deppy","pl1 2ds");
-            doctorStore.addUser(james);
-            doctorStore.addUser(sam);
-            doctorStore.addUser(jill);
+            DoctorModel doctor1 = new DoctorModel("Aran", "password", "Aran","Tall","pl4 8ba ");
+            DoctorModel doctor2 = new DoctorModel("John", "password", "Jhon","Likker","pl2 8bx");
+            DoctorModel doctor3 = new DoctorModel("Jony", "password", "Jonny","Deppy","pl1 2ds");
+            doctorStore.addUser(doctor1);
+            doctorStore.addUser(doctor2);
+            doctorStore.addUser(doctor3);
             
             AdministratorModel admin1 = new AdministratorModel("kouss", "password", "Kohei", "Suzuki","pl4 23");
             AdministratorStore adminStore = new AdministratorStore();
@@ -76,7 +76,6 @@ public class PatientManagementsystem {
             LocalDateTime now = LocalDateTime.now();
             MedicineModel med = new MedicineModel("paracemtol", 20 , "2 a day");
             PrescriptionModel pre = new PrescriptionModel( 0 ,"Josh","Evan","","06/Dec" ,med);
-//        pre.addMedicine(med);
             prescriptionStore.addPrescription(pre);
 
             MedicineModel med1 = new MedicineModel("paracemtol", 200);

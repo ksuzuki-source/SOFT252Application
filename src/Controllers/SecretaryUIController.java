@@ -10,15 +10,10 @@ import Views.SecretaryUI;
 import Appointment.AppointmentModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import Models.ModelsStore;
 import Patient.PatientModel;
-import Prescription.MedicineModel;
-import Prescription.PrescriptionModel;
 import UserModel.UserModel;
 
 /**
@@ -60,7 +55,6 @@ public class SecretaryUIController {
         setUpUsers();
         setUpPendingAppointments();
         setUpDoctorAppointment();
-        setUpMedStock();
         
         
     }
@@ -85,7 +79,6 @@ public class SecretaryUIController {
     private void setUpUsers() {
         //set up pending Patients
         setUpPendingPatientList();
-        setUpPatients();
         setUpPatientsTerminate();
     }
     private void setUpPendingPatientList(){
@@ -97,15 +90,6 @@ public class SecretaryUIController {
         }
         SecretaryView.setListApprovePatient(pendingPList);
          
-    }
-    private void setUpPatients(){
-        int pLength = modelStore.PatientStore.getUsers().size();
-        String[] pList = new String[pLength];
-        for (int i = 0; i < pLength; i++) {
-            pList[i] = modelStore.PatientStore.getUsers().get(i).getUsername();
-           
-        }
-
     }
     private void setUpPatientsTerminate(){
         int pLength = modelStore.PatientAccountTerminationRequestStore.getUsers().size();
@@ -129,15 +113,6 @@ public class SecretaryUIController {
         for (UserModel dr : modelStore.DoctorStore.getUsers()) {
              SecretaryView.addBoxDoctor(dr.getUsername());
         }
-    }
-    private void setUpMedStock(){
-        int medLength = modelStore.MedicineStore.getMedicine().size();
-        String[] medList = new String[medLength];
-        for (int i = 0; i < medLength; i++) {
-            medList[i] = (modelStore.MedicineStore.getMedicine().get(i).getName());
-           
-        }
-             
     }
     private void clearPendingPatientFields(){
         SecretaryView.setTxtApproveUsername("");
